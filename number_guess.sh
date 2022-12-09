@@ -22,6 +22,7 @@ then
 else
   # user not found
   USER_INSERT_RESULT=$($PSQL "INSERT INTO users (username) VALUES ('$USERNAME')")
+  USER_ID_FOUND=$($PSQL "SELECT user_id FROM users WHERE username = '$USERNAME'")
   echo "Welcome, $USERNAME! It looks like this is your first time here."
 fi
 
